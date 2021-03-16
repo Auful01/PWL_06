@@ -13,7 +13,9 @@ class TambahKolomDiTabelUser extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('username', 20)->after('id')->nullable()->unique();
+        });
     }
 
     /**
